@@ -36,6 +36,8 @@ The configuration inputs contain files as well as directories whose contents are
 
 Run the build for the first time (or after cleaning the configuration cache with `rm -rf .gradle/configuration-cache`):
 
+> 🔴 **TODO** Update the Gradle wrapper in this repository once it's built 
+
 ```./gradlew :app:help```
 
 In the outputs, find the lines:
