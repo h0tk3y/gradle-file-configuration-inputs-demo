@@ -69,3 +69,13 @@ will result in the following reason to recalculate the task graph:
 ```
 Calculating task graph as configuration cache cannot be reused because the content of directory 'app/build-inputs/kotlin/kotlin-list-files-build-input-directory-content' has changed.
 ```
+
+### Detecting build inputs in the signed JARs
+By default, detecting build inputs in the signed JARs is enabled. You can verify this by running:
+```
+./gradlew -q -Pjarsigning.enabled=true -DCI=true :app:printSignatures
+./gradlew -q -Pjarsigning.enabled=true -DCI=false :app:printSignatures
+```
+You can see that the change of the system property invalidates the configuration cache.
+
+The new logic can be turned off by adding `-Dorg.gradle.internal.instrumentation.agent=false` to the command line (or by modifying the `gradle.properties` file, where this feature is enabled).
