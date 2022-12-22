@@ -2,6 +2,7 @@ plugins {
     kotlin("jvm")
     `kotlin-dsl`
     `java-gradle-plugin`
+    id("com.example.jarsigning")
 }
 
 dependencies {

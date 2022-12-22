@@ -1,5 +1,6 @@
 plugins {
     `java-gradle-plugin`
+    id("com.example.jarsigning")
 }
 
 dependencies {

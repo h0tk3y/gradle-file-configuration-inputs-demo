@@ -1,10 +1,12 @@
 pluginManagement { 
+    includeBuild("jar-signing")
     repositories { 
         mavenCentral()
         gradlePluginPortal()
     }
     plugins { 
         kotlin("jvm").version("1.7.22")
+        id("com.example.jarsigning")
     }
 }
 

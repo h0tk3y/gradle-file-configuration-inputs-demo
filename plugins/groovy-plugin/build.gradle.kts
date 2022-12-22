@@ -1,6 +1,7 @@
 plugins {
     groovy
     `java-gradle-plugin`
+    id("com.example.jarsigning")
 }
 
 dependencies {
