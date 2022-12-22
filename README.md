@@ -73,8 +73,8 @@ Calculating task graph as configuration cache cannot be reused because the conte
 ### Detecting build inputs in the signed JARs
 By default, detecting build inputs in the signed JARs is enabled. You can verify this by running:
 ```
-./gradlew -q -Pjarsigning.enabled=true -DCI=true :app:printSignatures
-./gradlew -q -Pjarsigning.enabled=true -DCI=false :app:printSignatures
+./gradlew -q -DCI=true :app:printSignatures
+./gradlew -q -DCI=false :app:printSignatures
 ```
 You can see that the change of the system property invalidates the configuration cache.
 
