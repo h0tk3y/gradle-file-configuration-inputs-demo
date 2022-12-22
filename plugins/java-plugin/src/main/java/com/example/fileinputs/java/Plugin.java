@@ -1,7 +1,9 @@
 package com.example.fileinputs.java;
 
 import com.example.buildinputs.Util;
+import org.gradle.api.Action;
 import org.gradle.api.Project;
+import org.gradle.api.Task;
 import org.jetbrains.annotations.NotNull;
 
 import java.io.File;
@@ -35,6 +37,18 @@ public class Plugin implements org.gradle.api.Plugin<Project> {
         File[] listFilesFilenameFilter =
                 Util.buildInputDirectoryContent(target, JAVA, "list-files-filenamefilter")
                         .listFiles((File file, String filename) -> filename.startsWith("filename"));
+
+        target.getTasks().register("printSignatures", task -> {
+
+            boolean ciAtConfigurationTime = Boolean.getBoolean("CI");
+            task.doLast(new Action<Task>() {
+                public void execute(Task unused) {
+                    boolean isSigned = Plugin.class.getSigners() != null;
+                    System.out.println("Plugin is " + ((isSigned) ? "signed" : "not signed"));
+                    System.out.println("CI status is " + ciAtConfigurationTime);
+                }
+            });
+        });
     }
 
     private static final String JAVA = "java";
