@@ -38,7 +38,11 @@ Run the build for the first time (or after cleaning the configuration cache with
 
 > 🔴 **TODO** Update the Gradle wrapper in this repository once it's built 
 
-```./gradlew :app:help```
+```
+./gradlew :app:help
+```
+
+> To sign the plugin JARs and test the input detection with signed JARs, add `-Pjarsigning.enabled=true`
 
 In the outputs, find the lines:
 
