@@ -16,6 +16,8 @@ dependencyResolutionManagement {
     }
 }
 
+rootProject.name = "plugins"
+
 include("shared")
 include("java-plugin")
 include("kotlin-plugin")

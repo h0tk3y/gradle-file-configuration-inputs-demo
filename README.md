@@ -1,6 +1,7 @@
 ### Configuration cache input detection demo
 
-This sample project demonstrates new `File`-related APIs covered by configuration build input detection in Gradle.
+This sample project demonstrates new `File`-related APIs covered by configuration build input detection and input 
+input detection by instrumenting signed build logic JARs.
 
 ### New APIs coverage
 
@@ -36,13 +37,9 @@ The configuration inputs contain files as well as directories whose contents are
 
 Run the build for the first time (or after cleaning the configuration cache with `rm -rf .gradle/configuration-cache`):
 
-> 🔴 **TODO** Update the Gradle wrapper in this repository once it's built 
-
 ```
 ./gradlew :app:help
 ```
-
-> To sign the plugin JARs and test the input detection with signed JARs, add `-Pjarsigning.enabled=true`
 
 In the outputs, find the lines:
 
